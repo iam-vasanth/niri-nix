@@ -7,6 +7,7 @@
   
   imports = [
     ./home/noctalia.nix
+    ./home/symlinks.nix
     ./home/shell.nix
     noctalia.homeModules.default
   ];
