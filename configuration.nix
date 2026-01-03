@@ -73,7 +73,6 @@
     isNormalUser = true;
     description = "ZORO";
     extraGroups = [ "networkmanager" "wheel" "fuse" "video" ];
-    packages = with pkgs; [];
   };
 
   # Enables Niri and polkit
@@ -82,16 +81,25 @@
   services.greetd = {
     enable = true;
     settings = {
-      default_session = {
-        command = "niri-session";
-        user = "${user}";
-      };
       initial_session = {
         command = "niri-session";
         user = "${user}";
       };
     };
   };
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.dbus}/bin/dbus-run-session niri-session";
+  #       user = "${user}";
+  #     };
+  #     initial_session = {
+  #       command = "${pkgs.dbus}/bin/dbus-run-session niri-session";
+  #       user = "${user}";
+  #     };
+  #   };
+  # };
 
   # services.displayManager.ly.enable = true;
 
