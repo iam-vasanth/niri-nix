@@ -41,7 +41,7 @@
   networking.networkmanager.enable = true;
 
   # Hostname
-  networking.hostName = ${host};
+  networking.hostName = "${host}";
 
   # Sets your time zone.
   time.timeZone = "Asia/Kolkata";
