@@ -1,0 +1,15 @@
+binds {
+    // Core Noctalia binds
+    Super+Shift+L { spawn "qs" "ipc" "call" "lockscreen" "toggle"; }  // Lock screen (if using Quickshell lockscreen)
+    Super+D { spawn "qs" "ipc" "call" "launcher" "toggle"; }          // Toggle application launcher
+    Super+Return { spawn "qs" "ipc" "call" "control_center" "toggle"; } // Toggle control center (quick settings, media, etc.)
+    Super+Shift+P { spawn "qs" "ipc" "call" "power_menu" "toggle"; }  // Power menu (shutdown, reboot, etc.)
+    Super+N { spawn "qs" "ipc" "call" "notification_center" "toggle"; } // Notification center
+
+    // Optional useful ones
+    XF86AudioMute { spawn "qs" "ipc" "call" "audio" "mute"; }
+    XF86AudioLowerVolume { spawn "qs" "ipc" "call" "audio" "volume_down"; }
+    XF86AudioRaiseVolume { spawn "qs" "ipc" "call" "audio" "volume_up"; }
+    XF86MonBrightnessDown { spawn "qs" "ipc" "call" "brightness" "down"; }
+    XF86MonBrightnessUp { spawn "qs" "ipc" "call" "brightness" "up"; }
+}

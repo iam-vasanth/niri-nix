@@ -4,7 +4,10 @@
   imports =
     [
       /etc/nixos/hardware-configuration.nix
+      noctalia.nixosModules.default
     ];
+
+  services.noctalia-shell.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -96,6 +99,7 @@
   pkgs.fuse
   pkgs.fuse3
   pkgs.firefox
+  pkgs.nautilus
   ];
 
   virtualisation.vmware.guest.enable = true;

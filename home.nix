@@ -1,4 +1,4 @@
-{ config, host, user, pkgs, pkgs-unstable, noctalia ... }:
+{ config, host, user, pkgs, pkgs-unstable, noctalia, ... }:
 
 {
   home.username = user;
@@ -7,7 +7,8 @@
   
   imports = [
     ./home/noctalia.nix
-    inputs.noctalia.homeModules.default
+    ./home/shell.nix
+    noctalia.homeModules.default
   ];
 
   programs.home-manager.enable = true;

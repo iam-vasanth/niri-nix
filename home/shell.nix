@@ -11,9 +11,9 @@
     shellAliases = {
       "ll" = "ls -alh";
       ".." = "cd ..";
-      rebuild = "sudo nixos-rebuild switch --impure --flake ~/gnome-nix";
-      flakeu  = "nix flake update --flake ~/gnome-nix";
-      hupdate = "home-manager switch --impure --flake ~/gnome-nix";
+      rebuild = "sudo nixos-rebuild switch --impure --flake ~/niri-nix";
+      flakeu  = "nix flake update --flake ~/niri-nix";
+      hupdate = "home-manager switch --impure --flake ~/niri-nix";
       "gs" = "git status";
       };
   };

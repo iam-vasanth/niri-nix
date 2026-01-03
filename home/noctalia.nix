@@ -1,4 +1,4 @@
-{ config, host, user, pkgs, pkgs-unstable, noctalia ... }:
+{ config, host, user, pkgs, pkgs-unstable, noctalia, ... }:
 
 {
 
