@@ -28,7 +28,7 @@
     "udev.log_priority=3"
     "vt.global_cursor_default=0"
   ];
-  
+
   # Silences systemd logs
   systemd.settings = {
     Manager = {
@@ -78,7 +78,21 @@
   # Enables Niri and polkit
   programs.niri.enable = true;
   security.polkit.enable = true;
-  services.displayManager.ly.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "niri-session";
+        user = "${user}";
+      };
+      initial_session = {
+        command = "niri-session";
+        user = "${user}";
+      };
+    };
+  };
+
+  # services.displayManager.ly.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -100,10 +114,11 @@
   pkgs.fuse3
   pkgs.firefox
   pkgs.nautilus
+  pkgs.work-sans
   ];
 
   virtualisation.vmware.guest.enable = true;
-  
+
   fileSystems."/home/zoro/niri-nix" = {
     device = ".host:/niri-nix";
     fsType = "fuse./run/current-system/sw/bin/vmhgfs-fuse";
