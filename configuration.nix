@@ -1,4 +1,4 @@
-{ config, host, user, pkgs, pkgs-unstable, ... }:
+{ config, host, user, pkgs, pkgs-unstable, noctalia, ... }:
 
 {
   imports =
@@ -40,6 +40,10 @@
   # Enables networking
   networking.networkmanager.enable = true;
 
+  # Power profile
+  services.tuned.enable = true;
+  services.upower.enable = true;
+
   # Hostname
   networking.hostName = "${host}";
 
@@ -71,6 +75,7 @@
   # Enables Niri and polkit
   programs.niri.enable = true;
   security.polkit.enable = true;
+  services.displayManager.ly.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -81,16 +86,16 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-  neovim
-  wget
-  gitFull
-  zed-editor
-  alacritty
-  fuse
-  fuse3
-  firefox
-  fuzzel
+  environment.systemPackages = [
+  noctalia.packages.${pkgs-unstable.stdenv.hostPlatform.system}.default
+  pkgs.neovim
+  pkgs.wget
+  pkgs.gitFull
+  pkgs.zed-editor
+  pkgs.alacritty
+  pkgs.fuse
+  pkgs.fuse3
+  pkgs.firefox
   ];
 
   virtualisation.vmware.guest.enable = true;
