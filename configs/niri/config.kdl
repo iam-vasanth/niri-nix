@@ -1,6 +1,3 @@
-// Niri Configuration with Catppuccin Mocha Theme
-// Location: ~/.config/niri/config.kdl
-
 input {
     keyboard {
         xkb {
@@ -33,13 +30,13 @@ input {
 
 output "eDP-1" {
     mode "3840x2160@60"
-    // scale 2
+    scale 2
     // transform "normal"
     // position x=0 y=0
 }
 
 layout {
-    gaps 8
+    gaps 16
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -50,8 +47,8 @@ layout {
     default-column-width { proportion 0.5; }
 
     struts {
-        left 0
-        right 0
+        left 16
+        right 16
         top 0
         bottom 0
     }
@@ -93,42 +90,38 @@ window-rule {
 
 // Keybindings
 binds {
-	
+
 	Mod+O repeat=false { toggle-overview; }
 
     // Noctalia
     Mod+D { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+S { spawn "noctalia-shell" "ipc" "call" "settings" "toggle"; }
     Mod+V { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
-    Mod+` { spawn "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
+    Mod+Grave { spawn "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
     Mod+Escape { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
     Mod+L { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend"; }
 
     // Audio controls
     XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    Fn+Plus { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
     XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    Fn+Minus { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
     XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    Fn+Zero { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
 
-    Fn+Shift+Plus { spawn "noctalia-shell" "ipc" "call" "volume" "increaseInput"; }
-    Fn+Shift+Minus { spawn "noctalia-shell" "ipc" "call" "volume" "decreaseInput"; }
-    XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
-    Fn+Shift+Zero { spawn "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
+    Mod+XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increaseInput"; }
+    Mod+XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decreaseInput"; }
+    XF86AudioMicMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
 
     // Brightness controls
     XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
     XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
 
     // Power profile cycle
-    Fn+F10 { spawn "noctalia-shell" "ipc" "call" "powerProfile" "cycle"; }
-    
+    Mod+F12 { spawn "noctalia-shell" "ipc" "call" "powerProfile" "cycle"; }
+
     // Applications
     Mod+T { spawn "alacritty"; }
     Mod+E { spawn "thunar"; }
     Mod+B { spawn "firefox"; }
-    
+
     // // Screenshots
     // Print { screenshot; }
     // Ctrl+Print { screenshot-screen; }
@@ -208,16 +201,16 @@ binds {
 
 animations {
     slowdown 1.0
-    
+
     horizontal-view-movement {
         spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
     }
-    
+
     window-open {
         duration-ms 150
         curve "ease-out-cubic"
     }
-    
+
     window-close {
         duration-ms 150
         curve "ease-out-cubic"

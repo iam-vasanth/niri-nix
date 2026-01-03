@@ -5,7 +5,6 @@
     [
       /etc/nixos/hardware-configuration.nix
       noctalia.nixosModules.default
-      <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
     ];
 
   services.noctalia-shell.enable = true;
@@ -114,17 +113,7 @@
   pkgs.fuse3
   pkgs.firefox
   pkgs.nautilus
-  pkgs.work-sans
   ];
-
-  fileSystems."/home/zoro/niri-nix" = {
-    device = "niri-nix";
-    fsType = "virtiofs";
-    options = [ "defaults" "nofail" ];
-  };
-
-  services.qemuGuest.enable = true;
-  services.spice-vdagentd.enable = true;
 
   # virtualisation.vmware.guest.enable = true;
 
