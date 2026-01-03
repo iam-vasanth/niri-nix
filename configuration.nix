@@ -5,6 +5,7 @@
     [
       /etc/nixos/hardware-configuration.nix
       noctalia.nixosModules.default
+      <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
     ];
 
   services.noctalia-shell.enable = true;
@@ -117,14 +118,23 @@
   pkgs.work-sans
   ];
 
-  virtualisation.vmware.guest.enable = true;
-
   fileSystems."/home/zoro/niri-nix" = {
-    device = ".host:/niri-nix";
-    fsType = "fuse./run/current-system/sw/bin/vmhgfs-fuse";
-    options = [ "uid=1000" "allow_other" "defaults" ];
-    noCheck = true;
-    };
+    device = "niri-nix";
+    fsType = "virtiofs";
+    options = [ "defaults" "nofail" ];
+  };
+
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
+
+  # virtualisation.vmware.guest.enable = true;
+
+  # fileSystems."/home/zoro/niri-nix" = {
+  #   device = ".host:/niri-nix";
+  #   fsType = "fuse./run/current-system/sw/bin/vmhgfs-fuse";
+  #   options = [ "uid=1000" "allow_other" "defaults" ];
+  #   noCheck = true;
+  #   };
 
   system.stateVersion = "25.11"; # Do not touch this
 }
