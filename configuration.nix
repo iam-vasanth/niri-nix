@@ -4,10 +4,7 @@
   imports =
     [
       /etc/nixos/hardware-configuration.nix
-      noctalia.nixosModules.default
     ];
-
-  services.noctalia-shell.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -42,6 +39,17 @@
 
   # Enables networking
   networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true;
+
+  # Enables sound with pipewire
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   # Power profile
   services.tuned.enable = true;
@@ -53,7 +61,7 @@
   # Sets your time zone.
   time.timeZone = "Asia/Kolkata";
 
-  # Select internationalisation properties.
+  # Select internationalisation properties
   i18n.defaultLocale = "en_IN";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_IN";
@@ -76,7 +84,6 @@
 
   # Enables Niri and polkit
   programs.niri.enable = true;
-  security.polkit.enable = true;
   services.greetd = {
     enable = true;
     settings = {
@@ -93,17 +100,13 @@
 
   # services.displayManager.ly.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enables flatpak
+  services.flatpak.enable = true;
+
   environment.systemPackages = [
-  noctalia.packages.${pkgs-unstable.stdenv.hostPlatform.system}.default
   pkgs.neovim
   pkgs.wget
   pkgs.gitFull
@@ -113,6 +116,8 @@
   pkgs.fuse3
   pkgs.firefox
   pkgs.nautilus
+  pkgs.teams-for-linux
+  pkgs.wev
   ];
 
   # virtualisation.vmware.guest.enable = true;

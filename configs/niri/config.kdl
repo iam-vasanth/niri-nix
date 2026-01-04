@@ -62,24 +62,13 @@ hotkey-overlay {
     skip-at-startup
 }
 
-environment {
-    QT_QPA_PLATFORM "wayland"
-    DISPLAY ":0"
-    MOZ_ENABLE_WAYLAND "1"
-    // XCURSOR_THEME "Catppuccin-Mocha-Dark-Cursors"
-    XCURSOR_SIZE "24"
-    GDK_BACKEND "wayland"
-    QT_QPA_PLATFORM "wayland"
-    ELECTRON_OZONE_PLATFORM_HINT "auto"
+// Set the overview wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
 }
 
-// cursor {
-//     xcursor-theme "Catppuccin-Mocha-Dark-Cursors"
-//     xcursor-size 24
-// }
-
-// // Background wallpaper
-// spawn-at-startup "swww-daemon"
+// Noctalia autostart
 spawn-at-startup "noctalia-shell"
 
 // Window rules
@@ -115,10 +104,10 @@ binds {
     XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
 
     // Power profile cycle
-    Mod+F12 { spawn "noctalia-shell" "ipc" "call" "powerProfile" "cycle"; }
+    XF86Favorites { spawn "noctalia-shell" "ipc" "call" "powerProfile" "cycle"; }
 
     // Applications
-    Mod+T { spawn "alacritty"; }
+    Mod+T { spawn "kitty"; }
     Mod+E { spawn "thunar"; }
     Mod+B { spawn "firefox"; }
 
@@ -227,4 +216,14 @@ animations {
     config-notification-open-close {
         spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
     }
+}
+
+environment {
+    QT_QPA_PLATFORM "wayland"
+    DISPLAY ":0"
+    MOZ_ENABLE_WAYLAND "1"
+    XCURSOR_SIZE "24"
+    GDK_BACKEND "wayland"
+    QT_QPA_PLATFORM "wayland"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
 }

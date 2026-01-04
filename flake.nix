@@ -11,8 +11,9 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
-  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, noctalia, ... }:
+  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, noctalia, nix-flatpak, ... }:
   let
     host = "enma";
     user = "zoro";
@@ -36,7 +37,7 @@
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [ ./home.nix ];
-      extraSpecialArgs = { inherit host user pkgs pkgs-unstable noctalia; };
+      extraSpecialArgs = { inherit host user pkgs pkgs-unstable noctalia nix-flatpak; };
     };
   };
 }
