@@ -3,11 +3,11 @@
 {
   home.packages = [
     pkgs.kitty
-    pkgs.spotify-player
     pkgs.sops
     pkgs.age
     pkgs.ssh-to-age
     pkgs.teams-for-linux
+    # pkgs.spotify-player
   ];
 
   services.flatpak = {

@@ -121,6 +121,8 @@
   pkgs.wev
   ];
 
+  networking.firewall.enable = false;
+
   # virtualisation.vmware.guest.enable = true;
 
   # fileSystems."/home/zoro/niri-nix" = {
