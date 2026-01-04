@@ -12,8 +12,13 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    nixcord.url = "github:kaylorben/nixcord";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
   };
-  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, noctalia, nix-flatpak, ... }:
+  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, noctalia, nix-flatpak, nixcord, sops-nix, ... }:
   let
     host = "enma";
     user = "zoro";
@@ -37,7 +42,7 @@
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [ ./home.nix ];
-      extraSpecialArgs = { inherit host user pkgs pkgs-unstable noctalia nix-flatpak; };
+      extraSpecialArgs = { inherit host user pkgs pkgs-unstable noctalia nix-flatpak nixcord sops-nix; };
     };
   };
 }

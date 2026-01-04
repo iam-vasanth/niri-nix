@@ -43,15 +43,7 @@ layout {
         proportion 0.5
         proportion 0.66667
     }
-
     default-column-width { proportion 0.5; }
-
-    struts {
-        left 16
-        right 16
-        top 0
-        bottom 0
-    }
 }
 
 prefer-no-csd
@@ -227,3 +219,4 @@ environment {
     QT_QPA_PLATFORM "wayland"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
+include "./noctalia.kdl"

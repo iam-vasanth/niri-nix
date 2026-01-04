@@ -52,7 +52,8 @@
   };
 
   # Power profile
-  services.tuned.enable = true;
+  services.power-profiles-daemon.enable = true;
+  # services.tuned.enable = true;
   services.upower.enable = true;
 
   # Hostname
@@ -87,13 +88,13 @@
   services.greetd = {
     enable = true;
     settings = {
-      default_session = {
-        command = "niri-session";
-        user = "${user}";
-      };
       initial_session = {
         command = "niri-session";
         user = "${user}";
+      };
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd niri-session";
+        user = "greeter";
       };
     };
   };

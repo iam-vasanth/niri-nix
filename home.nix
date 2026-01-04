@@ -1,4 +1,4 @@
-{ config, host, user, pkgs, pkgs-unstable, noctalia, nix-flatpak, ... }:
+{ config, host, user, pkgs, pkgs-unstable, noctalia, nix-flatpak, nixcord, sops-nix, ... }:
 
 {
   home.username = user;
@@ -10,8 +10,13 @@
     # ./home/symlinks.nix
     ./home/pkgs.nix
     ./home/shell.nix
+    ./home/nixcord.nix
+    ./home/git.nix
+    ./home/ssh.nix
     noctalia.homeModules.default
     nix-flatpak.homeManagerModules.nix-flatpak
+    nixcord.homeModules.nixcord
+    sops-nix.homeManagerModules.sops
   ];
 
   programs.home-manager.enable = true;
