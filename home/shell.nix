@@ -11,6 +11,7 @@
     # Disable default greeting
     interactiveShellInit = ''
       set fish_greeting
+      nix-your-shell fish | source
     '';
 
     # Aliases
@@ -66,11 +67,6 @@
     enableFishIntegration = true;
     enableTransience = true;  # Cleaner prompt after commands (great in Fish)
   };
-
-  # Seamless nix develop / nix shell support in Fish
-  programs.fish.interactiveShellInit = ''
-    nix-your-shell fish | source
-  '';
 
     # Sets up XDG folders
     xdg.userDirs = {
