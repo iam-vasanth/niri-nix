@@ -1,4 +1,7 @@
-programs.kitty = {
+{ ... }:
+
+{
+  programs.kitty = {
     enable = true;
 
     settings = {
@@ -45,3 +48,4 @@ programs.kitty = {
       include noctalia.conf
     '';
   };
+}
