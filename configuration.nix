@@ -99,8 +99,6 @@
     };
   };
 
-  # services.displayManager.ly.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -113,6 +111,7 @@
   pkgs.gitFull
   pkgs.zed-editor
   pkgs.alacritty
+  pkgs.kitty
   pkgs.fuse
   pkgs.fuse3
   pkgs.firefox
@@ -121,7 +120,7 @@
   pkgs.wev
   ];
 
-  networking.firewall.enable = false;
+  networking.firewall.enable = true;
 
   # virtualisation.vmware.guest.enable = true;
 

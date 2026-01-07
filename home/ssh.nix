@@ -27,4 +27,9 @@
     enable = true;
     enableSshSupport = true;
   };
+
+  services.ssh-agent = {
+      enable = true;
+      enableFishIntegration = true;
+    };
 }

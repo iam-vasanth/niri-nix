@@ -3,11 +3,17 @@
 {
   home.packages = [
     pkgs.kitty
+    pkgs.starship
+    pkgs.teams-for-linux
+    # pkgs.spotify-player
+    # Fish dependencies
+    pkgs.fzf # fish : fzf-fish and forgit plugins
+    pkgs.grc # fish : grc plugin
+    pkgs.nix-your-shell  # fish optional : Nix develop ~/home/shell.nix line:
+    # sops-nix
     pkgs.sops
     pkgs.age
     pkgs.ssh-to-age
-    pkgs.teams-for-linux
-    # pkgs.spotify-player
   ];
 
   services.flatpak = {

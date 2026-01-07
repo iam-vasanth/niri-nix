@@ -7,3 +7,4 @@ hardware-configuration.nix
 /.misc
 /.ideas
 /plymouth-nixy
+/configs

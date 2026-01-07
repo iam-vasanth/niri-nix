@@ -5,6 +5,8 @@ set -e
 set -E
 set -o pipefail
 
+# eval "$(ssh-agent -s)"
+
 # Color codes for terminal output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -62,7 +64,7 @@ log() {
 run_cmd() {
     local cmd="$@"
     log INFO "Executing: $cmd"
-    
+
     if eval "$cmd" >> "$LOG_FILE" 2>&1; then
         log SUCCESS "Command completed: $cmd"
         return 0
@@ -161,7 +163,7 @@ if check_home_manager; then
     log INFO "Skipping home-manager installation"
 else
     log INFO "Installing home-manager (this may take several minutes)..."
-    
+
     # Add the channel (safe to run multiple times, but we can skip if already added)
     if ! nix-channel --list | grep -q "^home-manager "; then
         run_cmd "nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz home-manager"
