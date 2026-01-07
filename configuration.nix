@@ -120,6 +120,16 @@
   pkgs.wev
   ];
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    fira-code
+    fira-code-symbols
+    nerd-fonts.iosevka
+    nerd-fonts.hack
+    inter-nerdfont
+  ];
+
+
   networking.firewall.enable = true;
 
   # virtualisation.vmware.guest.enable = true;

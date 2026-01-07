@@ -20,18 +20,6 @@
       user.name = "iam-vasanth";
       user.email = "vk.vasanth.r@gmail.com";
 
-      aliases = {
-        co    = "checkout";
-        br    = "branch";
-        ci    = "commit";
-        st    = "status";
-        ps    = "push";
-        pl    = "pull";
-        aa    = "add .";
-        unstage = "reset HEAD --";
-        lg    = "log --oneline --graph --decorate";
-      };
-
       url = {
         "git@github.com:" = { insteadOf = "https://github.com/"; };
         "git@gitlab.com:" = { insteadOf = "https://gitlab.com/"; };
@@ -47,6 +35,7 @@
       };
     };
   };
+
   home.file.".config/git/allowed_signers".text = let
     pubKey = builtins.readFile "${config.home.homeDirectory}/.ssh/github_ssh.pub";
   in ''

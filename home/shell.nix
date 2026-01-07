@@ -5,6 +5,16 @@
     EDITOR = "nvim";
   };
 
+  programs.kitty = {
+    enable = true;
+    settings = {
+      shell = "fish";
+    };
+    shellIntegration = {
+      enableFishIntegration = true;
+    };
+  };
+
   programs.fish = {
     enable = true;
 
@@ -65,7 +75,7 @@
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
-    enableTransience = true;  # Cleaner prompt after commands (great in Fish)
+    # enableTransience = false;
   };
 
     # Sets up XDG folders
