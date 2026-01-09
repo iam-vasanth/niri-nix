@@ -24,10 +24,6 @@
     user = "zoro";
     lib = nixpkgs-stable.lib;
     system = "x86_64-linux";
-    pkgs = import nixpkgs-stable {
-      inherit system;
-      config.allowUnfree = true;
-    };
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
@@ -37,12 +33,15 @@
     nixosConfigurations.${host} = lib.nixosSystem {
       inherit system;
       modules = [ ./configuration.nix ];
-      specialArgs = { inherit host user pkgs pkgs-unstable noctalia; };
+      specialArgs = { inherit host user pkgs-unstable noctalia; };
     };
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+      pkgs = import nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
+      };
       modules = [ ./home.nix ];
-      extraSpecialArgs = { inherit host user pkgs pkgs-unstable noctalia nix-flatpak nixcord sops-nix; };
+      extraSpecialArgs = { inherit host user pkgs-unstable noctalia nix-flatpak nixcord sops-nix; };
     };
   };
 }

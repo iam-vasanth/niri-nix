@@ -10,7 +10,7 @@
     pkgs.fzf # fish : fzf-fish and forgit plugins
     pkgs.grc # fish : grc plugin
     pkgs.nix-your-shell  # fish optional : Nix develop ~/home/configs/fish.nix line:44
-    nixd # Zed-Editor : language server
+    pkgs.nixd # Zed-Editor : language server
     # sops-nix
     pkgs.sops
     pkgs.age
