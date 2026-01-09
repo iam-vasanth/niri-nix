@@ -26,7 +26,7 @@ programs.noctalia-shell = {
         enabled = true;
       }
       {
-        action = "suspend";
+        action = "suspend";s
         command = "";
         countdownEnabled = true;
         enabled = true;

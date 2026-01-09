@@ -40,6 +40,7 @@
   # Enables networking
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
+  networking.firewall.enable = true;
 
   # Enables sound with pipewire
   services.pulseaudio.enable = false;
@@ -118,6 +119,7 @@
   pkgs.nautilus
   pkgs.teams-for-linux
   pkgs.wev
+  pkgs.xwayland-satellite
   ];
 
   fonts.packages = with pkgs; [
@@ -128,18 +130,6 @@
     nerd-fonts.hack
     inter-nerdfont
   ];
-
-
-  networking.firewall.enable = true;
-
-  # virtualisation.vmware.guest.enable = true;
-
-  # fileSystems."/home/zoro/niri-nix" = {
-  #   device = ".host:/niri-nix";
-  #   fsType = "fuse./run/current-system/sw/bin/vmhgfs-fuse";
-  #   options = [ "uid=1000" "allow_other" "defaults" ];
-  #   noCheck = true;
-  #   };
 
   system.stateVersion = "25.11"; # Do not touch this
 }

@@ -13,8 +13,7 @@
     ./home/nixcord.nix
     ./home/git.nix
     ./home/ssh.nix
-    ./home/configs/kitty.nix
-    ./home/configs/starship.nix
+    ./home/configs.nix
     noctalia.homeModules.default
     nix-flatpak.homeManagerModules.nix-flatpak
     nixcord.homeModules.nixcord
