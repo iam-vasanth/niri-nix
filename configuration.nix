@@ -90,22 +90,13 @@
     enable = true;
     settings = {
       initial_session = {
-        command = "niri-session";
+        command = "/run/current-system/sw/bin/niri-session 2>/dev/null";
         user = "${user}";
       };
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd niri-session";
-        user = "greeter";
+        command = "/run/current-system/sw/bin/niri-session 2>/dev/null";
+        user = "${user}";
       };
-    };
-  };
-
-  # Fixes the import-environment deprecation error
-  systemd.user.services.niri = {
-    environment = {
-      # Explicitly set which variables to import
-      WAYLAND_DISPLAY = "";
-      DISPLAY = "";
     };
   };
 
@@ -139,6 +130,5 @@
     nerd-fonts.hack
     inter-nerdfont
   ];
-
   system.stateVersion = "25.11"; # Do not touch this
 }

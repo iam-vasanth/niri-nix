@@ -38,6 +38,7 @@ output "eDP-1" {
 layout {
     gaps 16
     center-focused-column "never"
+    background-color "#000000"
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
@@ -212,11 +213,11 @@ animations {
 
 environment {
     QT_QPA_PLATFORM "wayland"
-    DISPLAY ":0"
     MOZ_ENABLE_WAYLAND "1"
     XCURSOR_SIZE "24"
     GDK_BACKEND "wayland"
     QT_QPA_PLATFORM "wayland"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
+    NIXOS_OZONE_WL "1"
 }
 include "./noctalia.kdl"
