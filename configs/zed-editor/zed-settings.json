@@ -7,28 +7,31 @@
   "vim_mode": false,
   // Icon Themes
   "icon_theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Colored Zed Icons Theme Light",
     "dark": "Colored Zed Icons Theme Dark",
   },
   // Themes
   "theme": {
-    "mode": "system",
-    "light": "Ayu Light",
-    "dark": "Ayu Dark",
+    "mode": "dark",
+    "light": "Noctalia Light",
+    "dark": "Noctalia Dark",
   },
-  "ui_font_size": 16,
+  "ui_font_size": 16.0,
+  "ui_font_family": "Inter Nerd Font",
+  "ui_font_weight": 500.0,
   "buffer_font_size": 14,
-  "buffer_font_family": ".ZedMono",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_weight": 300.0,
   "buffer_line_height": {
     "custom": 1.5,
   },
   // Terminal
   "terminal": {
     "shell": {
-      "program": "powershell.exe",
+      "program": "fish",
     },
-    "font_family": ".ZedMono",
+    "font_family": "JetBrainsMono Nerd Font Mono",
     "font_size": 14,
     "line_height": {
       "custom": 1.4,
@@ -72,6 +75,7 @@
     "html": true,
     "toml": true,
     "nix": true,
+    "coloredzediconstheme": true,
   },
   // LSP & diagnostics
   "lsp": {

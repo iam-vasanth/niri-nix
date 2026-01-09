@@ -42,8 +42,8 @@
       glog = "git log --oneline --graph --decorate";
 
       # Nix
-      rebuild = "sudo nixos-rebuild switch --flake .#";
-      hms = "home-manager switch --flake .#";
+      rebuild = "sudo nixos-rebuild switch --impure --flake .#";
+      hms = "home-manager switch --impure --flake .#";
       ngc = "nix-collect-garbage -d";
       nsearch = "nix search nixpkgs";
 
@@ -69,13 +69,6 @@
       { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }     # Auto-close brackets/quotes
       { name = "grc"; src = pkgs.fishPlugins.grc.src; }               # Colorize command output
     ];
-  };
-
-  # Starship setup
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-    # enableTransience = false;
   };
 
     # Sets up XDG folders

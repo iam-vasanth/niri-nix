@@ -122,7 +122,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    fira-code
+    nerd-fonts.fira-code
     fira-code-symbols
     nerd-fonts.iosevka
     nerd-fonts.hack

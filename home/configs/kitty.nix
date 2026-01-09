@@ -12,8 +12,9 @@
       enableFishIntegration = true;
     };
 
+
     font = {
-      name = "JetBrainsMono Nerd Font Mono";
+      name = "JetBrainsMono Nerd Font Mono,FiraCode Nerd Font";
       size = 13.0;
     };
 
@@ -45,7 +46,7 @@
 
     # Theme file
     extraConfig = ''
-      include noctalia.conf
+      include themes/noctalia.conf
     '';
   };
 }

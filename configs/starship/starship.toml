@@ -33,8 +33,8 @@ show_always = true
 
 # Hostname
 [hostname]
-ssh_only = false
-format = "on [$hostname](bold secondary) "
+ssh_only = true
+format = "@ [$hostname](bold secondary) "
 disabled = false
 
 # Directory
