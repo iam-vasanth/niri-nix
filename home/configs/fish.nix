@@ -20,7 +20,7 @@
       g = "git";
       gs = "git status";
       ga = "git add";
-      gc = "git commit -v";
+      gc = "git commit -m";
       gco = "git checkout";
       gp = "git push";
       gl = "git pull";
