@@ -100,6 +100,15 @@
     };
   };
 
+  # Fixes the import-environment deprecation error
+  systemd.user.services.niri = {
+    environment = {
+      # Explicitly set which variables to import
+      WAYLAND_DISPLAY = "";
+      DISPLAY = "";
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
