@@ -12,9 +12,8 @@
       enableFishIntegration = true;
     };
 
-
     font = {
-      name = "JetBrainsMono Nerd Font Mono,FiraCode Nerd Font";
+      name = "JetBrainsMono Nerd Font Mono";
       size = 13.0;
     };
 

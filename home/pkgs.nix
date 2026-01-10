@@ -4,6 +4,7 @@
   home.packages = [
     pkgs.kitty
     pkgs.starship
+    pkgs.fastfetch
     pkgs.teams-for-linux
     # pkgs.spotify-player
     # Fish dependencies
