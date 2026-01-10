@@ -7,6 +7,7 @@
     pkgs.fastfetch
     pkgs.lazygit
     pkgs.teams-for-linux
+    pkgs.rstudio
     # pkgs.spotify-player
     # Fish dependencies
     pkgs.fzf # fish : fzf-fish and forgit plugins

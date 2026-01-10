@@ -84,7 +84,7 @@
     extraGroups = [ "networkmanager" "wheel" "fuse" "video" ];
   };
 
-  # Enables Niri and polkit
+  # Enables Niri and polkit with autoLogin
   programs.niri.enable = true;
   services.greetd = {
     enable = true;
@@ -105,6 +105,9 @@
 
   # Enables flatpak
   services.flatpak.enable = true;
+
+  # Enables docker
+  virtualisation.docker.enable = true;
 
   environment.systemPackages = [
   pkgs.neovim

@@ -1,0 +1,17 @@
+// Add start up applications and other application specific rules
+
+// Noctalia autostart
+spawn-at-startup "noctalia-shell"
+
+
+// Window rules
+window-rule {
+    match title="Picture-in-Picture"
+    open-floating true
+}
+
+// Sets the overview wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}
