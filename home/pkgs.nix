@@ -5,6 +5,7 @@
     pkgs.kitty
     pkgs.starship
     pkgs.fastfetch
+    pkgs.lazygit
     pkgs.teams-for-linux
     # pkgs.spotify-player
     # Fish dependencies
