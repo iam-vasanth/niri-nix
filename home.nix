@@ -7,7 +7,7 @@
 
   imports = [
     ./home/noctalia.nix
-    # ./home/symlinks.nix
+    ./home/symlinks.nix
     ./home/pkgs.nix
     ./home/shell.nix
     ./home/nixcord.nix
