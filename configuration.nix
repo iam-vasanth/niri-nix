@@ -120,7 +120,6 @@
   pkgs.fuse3
   pkgs.firefox
   pkgs.nautilus
-  pkgs.teams-for-linux
   pkgs.wev
   pkgs.xwayland-satellite
   ];

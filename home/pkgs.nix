@@ -8,6 +8,7 @@
     pkgs.lazygit
     pkgs.teams-for-linux
     pkgs.rstudio
+    pkgs.loupe
     # pkgs.spotify-player
     # Fish dependencies
     pkgs.fzf # fish : fzf-fish and forgit plugins
