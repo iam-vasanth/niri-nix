@@ -17,6 +17,7 @@
       tree = "ls --tree";
 
       # Git
+      lc = "lazygit";
       g = "git";
       gs = "git status";
       ga = "git add";
