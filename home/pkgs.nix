@@ -6,12 +6,13 @@
     pkgs.starship
     pkgs.fastfetch
     pkgs.lazygit
+    pkgs.lazydocker
+    pkgs.distrobox
     pkgs.teams-for-linux
     pkgs.rstudio
     pkgs.omnisharp-roslyn
     pkgs.dotnet-sdk_9
     pkgs.loupe
-    pkgs.lazydocker
     # pkgs.spotify-player
     # Fish dependencies
     pkgs.fzf # fish : fzf-fish and forgit plugins
