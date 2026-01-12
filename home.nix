@@ -1,4 +1,4 @@
-{ config, host, user, pkgs, pkgs-unstable, noctalia, nix-flatpak, nixcord, sops-nix, ... }:
+{ user, noctalia, nix-flatpak, nixcord, sops-nix, ... }:
 
 {
   home.username = user;

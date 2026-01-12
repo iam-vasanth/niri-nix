@@ -3,7 +3,6 @@
 // Noctalia autostart
 spawn-at-startup "noctalia-shell"
 
-
 // Window rules
 window-rule {
   match title="Picture-in-Picture"
@@ -11,9 +10,8 @@ window-rule {
 }
 
 window-rule {
-  match app-id="app.zen_browser.zen"
-  match title="Sign in - Google Accounts"
-  open-floating true
+  geometry-corner-radius 15
+  clip-to-geometry true
 }
 
 // Sets the overview wallpaper on the backdrop.

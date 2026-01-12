@@ -1,8 +1,10 @@
 { ... }:
+
 {
   programs.noctalia-shell = {
     settings = {
       settingsVersion = 37;
+
       bar = {
         backgroundOpacity = 0.93;
         capsuleOpacity = 1;
@@ -117,6 +119,7 @@
           ];
         };
       };
+
       dock = {
         animationSpeed = 1;
         backgroundOpacity = 1;

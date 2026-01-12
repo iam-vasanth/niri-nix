@@ -9,6 +9,7 @@ binds {
     Mod+S { spawn "noctalia-shell" "ipc" "call" "settings" "toggle"; }
     Mod+V { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
     Mod+Grave { spawn "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
+    Mod+W { spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle"; }
     Mod+Escape { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
     Mod+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   programs.noctalia-shell = {

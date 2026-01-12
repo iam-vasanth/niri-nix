@@ -40,6 +40,13 @@ animations {
     }
 }
 
+// Cursor
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+    hide-after-inactive-ms 10000
+}
+
 
 // Miscs
 

@@ -1,4 +1,4 @@
-{ config, host, user, pkgs, pkgs-unstable, noctalia, ... }:
+{ host, user, pkgs, ... }:
 
 {
   imports =
@@ -103,6 +103,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # To start dynamically linked executable
+  programs.nix-ld.enable = true;
+
   # Enables flatpak
   services.flatpak.enable = true;
 
@@ -121,6 +124,7 @@
   pkgs.firefox
   pkgs.nautilus
   pkgs.wev
+  pkgs.bibata-cursors
   pkgs.xwayland-satellite
   ];
 
