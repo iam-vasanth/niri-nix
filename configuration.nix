@@ -81,7 +81,7 @@
   users.users.${user} = {
     isNormalUser = true;
     description = "ZORO";
-    extraGroups = [ "networkmanager" "wheel" "fuse" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "fuse" "video" ];
   };
 
   # Enables Niri and polkit with autoLogin
@@ -89,10 +89,6 @@
   services.greetd = {
     enable = true;
     settings = {
-      initial_session = {
-        command = "/run/current-system/sw/bin/niri-session 2>/dev/null";
-        user = "${user}";
-      };
       default_session = {
         command = "/run/current-system/sw/bin/niri-session 2>/dev/null";
         user = "${user}";
