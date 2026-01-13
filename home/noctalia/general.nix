@@ -76,7 +76,7 @@
         boxBorderEnabled = false;
         fontDefault = "Inter Nerd Font Display SemiBold";
         fontDefaultScale = 0.95;
-        fontFixed = "Fira Code";
+        fontFixed = "FiraCode Nerd Font";
         fontFixedScale = 0.95;
         networkPanelView = "wifi";
         panelBackgroundOpacity = 0.9;

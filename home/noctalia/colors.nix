@@ -46,7 +46,7 @@
         panelPosition = "bottom_center";
         randomEnabled = false;
         randomIntervalSec = 300;
-        recursiveSearch = false;
+        recursiveSearch = true;
         setWallpaperOnAllMonitors = true;
         solidColor = "#1a1a2e";
         transitionDuration = 1200;

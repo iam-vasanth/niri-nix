@@ -132,5 +132,6 @@
     nerd-fonts.hack
     inter-nerdfont
   ];
+
   system.stateVersion = "25.11"; # Do not touch this
 }

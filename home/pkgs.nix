@@ -37,6 +37,7 @@
       { appId = "com.ranfdev.DistroShelf"; origin = "flathub"; }
       { appId = "io.github.flattool.Warehouse"; origin = "flathub"; }
       { appId = "com.stremio.Stremio"; origin = "flathub"; }
+      { appId = "io.github.hrkfdn.ncspot"; origin = "flathub"; }
       # { appId = "flathub:com.ml4w.dotfilesinstaller"; origin = "flathub" } # For dotfiles management
     ];
   };
