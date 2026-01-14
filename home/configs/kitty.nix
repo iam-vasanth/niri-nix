@@ -32,15 +32,13 @@
       background_opacity = "0.95";
     };
     keybindings = {
-      "ctrl+shift+t" = "new_tab";
-      "ctrl+shift+enter" = "new_window";
-      "ctrl+shift+right" = "next_tab";
-      "ctrl+shift+left" = "previous_tab";
-      "ctrl+shift+w" = "close_window";
-      "ctrl+shift+q" = "close_tab";
-      "ctrl+shift+equal" = "change_font_size all +2.0";
-      "ctrl+shift+minus" = "change_font_size all -2.0";
-      "ctrl+shift+0" = "change_font_size all 0";
+      "alt+t" = "new_tab";
+      "alt+right" = "next_tab";
+      "alt+left" = "previous_tab";
+      "alt+q" = "close_tab";
+      "ctrl+equal" = "change_font_size all +2.0";
+      "ctrl+minus" = "change_font_size all -2.0";
+      "ctrl+0" = "change_font_size all 0";
     };
 
     # Theme file

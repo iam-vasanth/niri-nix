@@ -12,6 +12,7 @@
 
     # Aliases
     shellAliases = {
+      cd = "cd ..";
       ll = "ls -lAh";
       la = "ls -A";
       tree = "ls --tree";
