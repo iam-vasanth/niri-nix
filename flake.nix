@@ -1,6 +1,7 @@
 {
   description = "My niri nix flake";
   inputs = {
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
@@ -18,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
   };
-  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, noctalia, nix-flatpak, nixcord, sops-nix, ... }:
+  outputs = { nixos-hardware, nixpkgs-stable, nixpkgs-unstable, home-manager, noctalia, nix-flatpak, nixcord, sops-nix, ... }:
   let
     host = "enma";
     user = "zoro";
@@ -32,7 +33,12 @@
   {
     nixosConfigurations.${host} = lib.nixosSystem {
       inherit system;
-      modules = [ ./configuration.nix ];
+      modules = [
+        /etc/nixos/hardware-configuration.nix
+        ./configuration.nix
+        nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen
+        nixos-hardware.nixosModules.lenovo-thinkpad
+      ];
       specialArgs = { inherit host user pkgs-unstable noctalia; };
     };
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
