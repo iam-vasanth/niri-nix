@@ -29,6 +29,9 @@
 
   ];
 
+  # Enables bluetooth audio controls
+  services.mpris-proxy.enable = true;
+
   programs.noctalia-shell.enable = true;
   # programs.noctalia-shell.systemd.enable = true;
 }
