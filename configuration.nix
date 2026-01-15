@@ -1,4 +1,4 @@
-{ host, user, pkgs, ... }:
+{ host, user, pkgs, lib, ... }:
 
 {
   imports =
@@ -16,6 +16,7 @@
 
   # Kernel params
   boot.consoleLogLevel = 0;
+  boot.initrd.systemd.enable = true;
   boot.initrd.verbose = false;
   boot.kernelParams = [
     "quiet"
@@ -26,11 +27,21 @@
     "vt.global_cursor_default=0"
   ];
 
+  swapDevices = lib.mkForce [
+    {
+      device = "/swapfile";
+      size = 16384;
+    }
+  ];
+
   # Silences systemd logs
-  systemd.settings = {
-    Manager = {
-      ShowStatus = "no";
-      DefaultStandardOutput = "null";
+  systemd = {
+    services.NetworkManager-wait-online.enable = false;
+    settings = {
+      Manager = {
+        ShowStatus = "no";
+        DefaultStandardOutput = "null";
+      };
     };
   };
 
@@ -55,7 +66,6 @@
 
   # Power profile
   services.power-profiles-daemon.enable = true;
-  # services.tuned.enable = true;
   services.upower.enable = true;
 
   # Hostname
@@ -85,17 +95,20 @@
     extraGroups = [ "networkmanager" "wheel" "docker" "fuse" "video" ];
   };
 
-  # Enables Niri and polkit with autoLogin
+  # Enables Niri and greetd with autoLogin
   programs.niri.enable = true;
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "/run/current-system/sw/bin/niri-session 2>/dev/null";
-        user = "${user}";
-      };
+  services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "${user}";
+    };
+    gdm = {
+      enable = true;
+      wayland = true;
+      autoSuspend = false;
     };
   };
+  services.gnome.gnome-keyring.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -107,7 +120,7 @@
   services.flatpak.enable = true;
 
   # Enables docker
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
   environment.systemPackages = [
   pkgs.neovim

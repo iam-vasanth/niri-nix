@@ -13,7 +13,6 @@
     pkgs.omnisharp-roslyn
     pkgs.dotnet-sdk_9
     pkgs.loupe
-    # pkgs.spotify-player
     # Fish dependencies
     pkgs.fzf # fish : fzf-fish and forgit plugins
     pkgs.grc # fish : grc plugin
